@@ -1,0 +1,256 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    [uib-typeahead-popup].dropdown-menu {
+      display: block;
+    }
+  </style>
+  <style type="text/css">
+    .uib-time input {
+      width: 50px;
+    }
+  </style>
+  <style type="text/css">
+    [uib-tooltip-popup].tooltip.top-left>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.top-right>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.bottom-left>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.bottom-right>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.left-top>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.left-bottom>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.right-top>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.right-bottom>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.top-left>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.top-right>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.bottom-left>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.bottom-right>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.left-top>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.left-bottom>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.right-top>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.right-bottom>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.top-left>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.top-right>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.bottom-left>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.bottom-right>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.left-top>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.left-bottom>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.right-top>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.right-bottom>.tooltip-arrow,
+    [uib-popover-popup].popover.top-left>.arrow,
+    [uib-popover-popup].popover.top-right>.arrow,
+    [uib-popover-popup].popover.bottom-left>.arrow,
+    [uib-popover-popup].popover.bottom-right>.arrow,
+    [uib-popover-popup].popover.left-top>.arrow,
+    [uib-popover-popup].popover.left-bottom>.arrow,
+    [uib-popover-popup].popover.right-top>.arrow,
+    [uib-popover-popup].popover.right-bottom>.arrow,
+    [uib-popover-html-popup].popover.top-left>.arrow,
+    [uib-popover-html-popup].popover.top-right>.arrow,
+    [uib-popover-html-popup].popover.bottom-left>.arrow,
+    [uib-popover-html-popup].popover.bottom-right>.arrow,
+    [uib-popover-html-popup].popover.left-top>.arrow,
+    [uib-popover-html-popup].popover.left-bottom>.arrow,
+    [uib-popover-html-popup].popover.right-top>.arrow,
+    [uib-popover-html-popup].popover.right-bottom>.arrow,
+    [uib-popover-template-popup].popover.top-left>.arrow,
+    [uib-popover-template-popup].popover.top-right>.arrow,
+    [uib-popover-template-popup].popover.bottom-left>.arrow,
+    [uib-popover-template-popup].popover.bottom-right>.arrow,
+    [uib-popover-template-popup].popover.left-top>.arrow,
+    [uib-popover-template-popup].popover.left-bottom>.arrow,
+    [uib-popover-template-popup].popover.right-top>.arrow,
+    [uib-popover-template-popup].popover.right-bottom>.arrow {
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      margin: 0;
+    }
+
+    [uib-popover-popup].popover,
+    [uib-popover-html-popup].popover,
+    [uib-popover-template-popup].popover {
+      display: block !important;
+    }
+  </style>
+  <style type="text/css">
+    .uib-datepicker-popup.dropdown-menu {
+      display: block;
+      float: none;
+      margin: 0;
+    }
+
+    .uib-button-bar {
+      padding: 10px 9px 2px;
+    }
+  </style>
+  <style type="text/css">
+    .uib-position-measure {
+      display: block !important;
+      visibility: hidden !important;
+      position: absolute !important;
+      top: -9999px !important;
+      left: -9999px !important;
+    }
+
+    .uib-position-scrollbar-measure {
+      position: absolute !important;
+      top: -9999px !important;
+      width: 50px !important;
+      height: 50px !important;
+      overflow: scroll !important;
+    }
+
+    .uib-position-body-scrollbar-measure {
+      overflow: scroll !important;
+    }
+  </style>
+  <style type="text/css">
+    .uib-datepicker .uib-title {
+      width: 100%;
+    }
+
+    .uib-day button,
+    .uib-month button,
+    .uib-year button {
+      min-width: 100%;
+    }
+
+    .uib-left,
+    .uib-right {
+      width: 100%
+    }
+  </style>
+  <style type="text/css">
+    .ng-animate.item:not(.left):not(.right) {
+      -webkit-transition: 0s ease-in-out left;
+      transition: 0s ease-in-out left
+    }
+  </style>
+  <style type="text/css">
+    @charset "UTF-8";
+
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak,
+    .ng-hide:not(.ng-hide-animate) {
+      display: none !important;
+    }
+
+    ng\:form {
+      display: block;
+    }
+
+    .ng-animate-shim {
+      visibility: hidden;
+    }
+
+    .ng-anchor {
+      position: absolute;
+    }
+  </style>
+
+  <title>Validador Documento / Departamento de Polícia Federal</title>
+
+  <meta http-equiv="Content-Language" content="pt-br">
+
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="icon" type="image/png" href="{% static 'images/32x32.png' %}">
+
+  <link rel="stylesheet" href="{% static 'app.css' %}">
+
+  <link rel="stylesheet" href="{% static 'vendor.css' %}">
+
+</head>
+
+<body class="ng-scope block-ui block-ui-anim-fade" aria-busy="false">
+  <!-- uiView: -->
+  <div ui-view="" class="wrapper ng-scope" bis_skin_checked="1"><validar-documento class="ng-scope ng-isolate-scope">
+      <script src="{% static 'api.js' %}" async="" defer="defer"></script> 
+
+      <dados-documento class="ng-scope ng-isolate-scope">
+
+        <form id="formDadosDocumento" name="formDadosDocumento" class="ng-pristine ng-valid">
+          <div class="text-center mb-4" bis_skin_checked="1">
+            <img class="mb-4" src="{% static 'images/dpf-logo.png' %}" alt="" width="72">
+            <h1 class="h3 mb-3" style="font-weight:bold">Documento autêntico</h1>
+          </div>
+
+          <h4>Dados do documento</h4>
+
+          <div class="form-group row ng-scope"
+            ng-if=""
+            bis_skin_checked="1">
+            <label for="codigo" class="col-sm-2 col-form-label">Situacao:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">Valido até: {{ dado.situacao|date:"d/m/Y" }}</span>
+            </div>
+          </div>
+
+          <div class="form-group row" bis_skin_checked="1">
+            <label for="codigo" class="col-sm-2 col-form-label">Código:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">{{ dado.codigo }}</span>
+            </div>
+          </div>
+
+          <div class="form-group row ng-scope" bis_skin_checked="1">
+            <label class="col-sm-2 col-form-label ng-binding">Nome:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">{{ dado.nome }}</span>
+            </div>
+          </div>
+          <div class="form-group row ng-scope" bis_skin_checked="1">
+            <label class="col-sm-2 col-form-label ng-binding">Sobrenome:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">{{ dado.sobrenome }}</span>
+            </div>
+          </div>
+          <div class="form-group row ng-scope" bis_skin_checked="1">
+            <label class="col-sm-2 col-form-label ng-binding">RNM:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">{{ dado.rnm }}</span>
+            </div>
+          </div>
+          <div class="form-group row ng-scope" bis_skin_checked="1">
+            <label class="col-sm-2 col-form-label ng-binding">Data de nascimento:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">{{ dado.data_nascimento|date:"d/m/Y" }}</span>
+            </div>
+          </div>
+          <div class="form-group row ng-scope" bis_skin_checked="1">
+            <label class="col-sm-2 col-form-label ng-binding">Nacionalidade:</label>
+            <div class="col-sm-10" bis_skin_checked="1">
+              <span class="ng-binding">{{ dado.nacionalidade }}</span>
+            </div>
+          </div>
+          <div class="row" bis_skin_checked="1">
+            <div class="col-xs-2 col-xs-offset-5" bis_skin_checked="1">
+              <button type=button class="btn btn-lg btn-disabled btn-block" onClick="javascript:history.go(-1);">Voltar</button>
+            </div>
+          </div>
+          
+    <script src="{% static 'vendor.js'%}"></script>
+    
+    <script src="{% static 'app.js'%}"></script>
+
+  </body>
+  
+  </html>

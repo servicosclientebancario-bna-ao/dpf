@@ -1,0 +1,376 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="origin-trial">
+  <style type="text/css">
+    [uib-typeahead-popup].dropdown-menu {
+      display: block;
+    }
+  </style>
+  <style type="text/css">
+    .uib-time input {
+      width: 50px;
+    }
+  </style>
+  <style type="text/css">
+    [uib-tooltip-popup].tooltip.top-left>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.top-right>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.bottom-left>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.bottom-right>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.left-top>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.left-bottom>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.right-top>.tooltip-arrow,
+    [uib-tooltip-popup].tooltip.right-bottom>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.top-left>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.top-right>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.bottom-left>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.bottom-right>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.left-top>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.left-bottom>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.right-top>.tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.right-bottom>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.top-left>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.top-right>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.bottom-left>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.bottom-right>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.left-top>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.left-bottom>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.right-top>.tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.right-bottom>.tooltip-arrow,
+    [uib-popover-popup].popover.top-left>.arrow,
+    [uib-popover-popup].popover.top-right>.arrow,
+    [uib-popover-popup].popover.bottom-left>.arrow,
+    [uib-popover-popup].popover.bottom-right>.arrow,
+    [uib-popover-popup].popover.left-top>.arrow,
+    [uib-popover-popup].popover.left-bottom>.arrow,
+    [uib-popover-popup].popover.right-top>.arrow,
+    [uib-popover-popup].popover.right-bottom>.arrow,
+    [uib-popover-html-popup].popover.top-left>.arrow,
+    [uib-popover-html-popup].popover.top-right>.arrow,
+    [uib-popover-html-popup].popover.bottom-left>.arrow,
+    [uib-popover-html-popup].popover.bottom-right>.arrow,
+    [uib-popover-html-popup].popover.left-top>.arrow,
+    [uib-popover-html-popup].popover.left-bottom>.arrow,
+    [uib-popover-html-popup].popover.right-top>.arrow,
+    [uib-popover-html-popup].popover.right-bottom>.arrow,
+    [uib-popover-template-popup].popover.top-left>.arrow,
+    [uib-popover-template-popup].popover.top-right>.arrow,
+    [uib-popover-template-popup].popover.bottom-left>.arrow,
+    [uib-popover-template-popup].popover.bottom-right>.arrow,
+    [uib-popover-template-popup].popover.left-top>.arrow,
+    [uib-popover-template-popup].popover.left-bottom>.arrow,
+    [uib-popover-template-popup].popover.right-top>.arrow,
+    [uib-popover-template-popup].popover.right-bottom>.arrow {
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      margin: 0;
+    }
+
+    [uib-popover-popup].popover,
+    [uib-popover-html-popup].popover,
+    [uib-popover-template-popup].popover {
+      display: block !important;
+    }
+  </style>
+  <style type="text/css">
+    .uib-datepicker-popup.dropdown-menu {
+      display: block;
+      float: none;
+      margin: 0;
+    }
+
+    .uib-button-bar {
+      padding: 10px 9px 2px;
+    }
+  </style>
+  <style type="text/css">
+    .uib-position-measure {
+      display: block !important;
+      visibility: hidden !important;
+      position: absolute !important;
+      top: -9999px !important;
+      left: -9999px !important;
+    }
+
+    .uib-position-scrollbar-measure {
+      position: absolute !important;
+      top: -9999px !important;
+      width: 50px !important;
+      height: 50px !important;
+      overflow: scroll !important;
+    }
+
+    .uib-position-body-scrollbar-measure {
+      overflow: scroll !important;
+    }
+  </style>
+  <style type="text/css">
+    .uib-datepicker .uib-title {
+      width: 100%;
+    }
+
+    .uib-day button,
+    .uib-month button,
+    .uib-year button {
+      min-width: 100%;
+    }
+
+    .uib-left,
+    .uib-right {
+      width: 100%
+    }
+  </style>
+  <style type="text/css">
+    .ng-animate.item:not(.left):not(.right) {
+      -webkit-transition: 0s ease-in-out left;
+      transition: 0s ease-in-out left
+    }
+  </style>
+  <style type="text/css">
+    @charset "UTF-8";
+
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak,
+    .ng-hide:not(.ng-hide-animate) {
+      display: none !important;
+    }
+
+    ng\:form {
+      display: block;
+    }
+
+    .ng-animate-shim {
+      visibility: hidden;
+    }
+
+    .ng-anchor {
+      position: absolute;
+    }
+  </style>
+
+  <title>Validador Documento / Departamento de Polícia Federal</title>
+
+  <meta http-equiv="Content-Language" content="pt-br">
+
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="icon" type="image/png" href="{% static 'images/32x32.png' %}">
+
+  <link rel="stylesheet" href="{% static 'app.css' %}">
+  <link rel="stylesheet" href="{% static 'toast.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'vendor.css' %}">
+  <script bis_use="true" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css">
+    @font-face {
+      font-weight: 400;
+      font-style: normal;
+      font-family: circular;
+
+      src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-weight: 700;
+      font-style: normal;
+      font-family: circular;
+
+      src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+    }
+  </style>
+</head>
+
+<body class="ng-scope block-ui block-ui-anim-fade" aria-busy="false">
+
+  <div ui-view="" class="wrapper ng-scope" bis_skin_checked="1"><validar-documento class="ng-scope ng-isolate-scope">
+      <script src="{% static 'api.js' %}" async="" defer="defer"></script> 
+
+      <style>
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+      </style>
+
+      <form class="form-signin ng-pristine ng-valid-mask ng-invalid ng-invalid-required" id="formValidarDocumento" name="formValidarDocumento" action="{% url 'validarDocumento' %}" method="POST">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+            <img class="mb-4" src="{% static 'images/dpf-logo.png' %}" alt="" width="72">
+            <h1 class="h3 mb-3" style="font-weight:bold">Validador de autenticidade de documento</h1>
+        </div>
+        <div class="form-label-group">
+            <input type="text" id="inputCodigo" name="codigo" class="form-control ng-pristine ng-valid-mask ng-empty ng-invalid ng-invalid-required ng-touched"
+                  value="{{ codigo }}" maxlength="36" required autofocus placeholder="________-____-____-____-____________" oninput="atualizarBotaoValidar()"  autocomplete="off">
+            <label for="inputCodigo">Código Verificador</label>
+        </div>
+
+        <div class="text-center mb-4">
+            <button class="btn btn-primary" type="submit" id="validarButton" disabled="disabled">Validar</button>
+            <button class="btn btn-secondary" type="button" onclick="limpar()">Limpar</button>
+        </div>
+      </form>
+
+      {% if messages %}
+      <div id="toast-container" class="toast-top-right" style="pointer-events: auto;" bis_skin_checked="1"><div toast="" class="ng-scope ng-animate ng-leave ng-leave-active" bis_skin_checked="1" data-ng-animate="2"><div class="toast toast-error" ng-click="tapToast()" bis_skin_checked="1"><button class="toast-close-button ng-scope" ng-click="close(true, $event)">×</button>
+        <div ng-switch="" on="allowHtml" bis_skin_checked="1">
+          <div ng-switch-default="" ng-if="title" class="toast-title" aria-label="Erro" bis_skin_checked="1">Erro</div>
+          <div ng-switch-default="" class="toast-message" aria-label="Código verificador inexistente" bis_skin_checked="1">Código verificador inexistente</div>
+        </div>
+        <progress-bar ng-if="progressBar" class="ng-scope" style="width: 0%;"><div class="toast-progress" bis_skin_checked="1"></div>
+      </progress-bar>
+      </div>
+      </div></div>
+      {% endif %}    
+    
+      <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function limpar() {
+            const inputField = document.getElementById('inputCodigo');
+            inputField.value = '';
+            inputField.setSelectionRange(0, 0); // Coloca o cursor no início do campo
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const inputField = document.getElementById('inputCodigo');
+            const validarButton = document.getElementById('validarButton');
+            const placeholderText = '________-____-____-____-____________';
+            const codigoParam = getQueryParameter('codigo');
+
+            if (codigoParam) {
+                // Aplicar formatação ao código
+                let formattedCodigo = codigoParam.replace(/[^A-Za-z0-9]/g, '');
+                let maskedValue = '';
+
+                for (let i = 0; i < formattedCodigo.length && i < 32; i++) {
+                    maskedValue += formattedCodigo[i];
+                    if (i === 7 || i === 11 || i === 15 || i === 19) {
+                        maskedValue += '-';
+                    }
+                }
+
+                inputField.value = maskedValue;
+                validarButton.removeAttribute('disabled'); // Habilita o botão se o código for válido
+            }
+            else {
+                // inputField.value = placeholderText; corrija, pois impede a digitalização
+                inputField.setSelectionRange(0, 0); // Coloca o cursor no início do campo
+            }
+
+            // Ao focar o campo, limpar o placeholder se necessário
+            inputField.addEventListener('focus', function() {
+                if (inputField.value === '') {
+                    // inputField.value = placeholderText; corrijapois empede a digitalização
+                    inputField.setSelectionRange(0, 0); // Coloca o cursor no início do campo
+                }
+            });
+
+            // Ao sair do campo, restaurar o placeholder se necessário
+            inputField.addEventListener('blur', function() {
+                if (inputField.value === placeholderText) {
+                    inputField.value = '';
+                    inputField.setSelectionRange(0, 0); // Coloca o cursor no início do campo
+                }
+            });
+
+            // Permitir o movimento do cursor dentro dos blocos
+            inputField.addEventListener('keydown', function(event) {
+                const key = event.key;
+                const currentPosition = inputField.selectionStart;
+    
+                if (key === 'Backspace' && currentPosition > 0) {
+                    // Verifica se o caractere anterior é um traço ou um zero no placeholder
+                    if (inputField.value[currentPosition - 1] === '-' || (inputField.value[currentPosition - 1] === '0' && inputField.value[currentPosition] === '-')) {
+                        inputField.setSelectionRange(currentPosition - 1, currentPosition - 1); // Mantém o cursor no início do bloco
+                        event.preventDefault(); // Impede o comportamento padrão do backspace
+                    }
+                }
+            });
+
+            // Validar e aplicar a máscara conforme o usuário digita
+            inputField.addEventListener('input', function(event) {
+                let value = event.target.value.replace(/[^A-Za-z0-9]/g, '');
+                let maskedValue = '';
+
+                for (let i = 0; i < value.length && i < 32; i++) {
+                    maskedValue += value[i];
+                    if (i === 7 || i === 11 || i === 15 || i === 19) {
+                        maskedValue += '-';
+                    }
+                }
+
+                event.target.value = maskedValue;
+
+                // Se o valor se tornar vazio, restaurar o placeholder
+                if (maskedValue === '') {
+                    inputField.placeholder = placeholderText; // corrija, impede a digitalização
+                    inputField.setSelectionRange(0, 0); // Coloca o cursor no início do campo
+                }
+            });
+
+        });
+        function atualizarBotaoValidar() {
+            const inputField = document.getElementById('inputCodigo');
+            const validarButton = document.getElementById('validarButton');
+            const placeholderText = '________-____-____-____-____________';
+
+            // Verifica se o campo está completamente preenchido
+            if (inputField.value.length === placeholderText.length && !inputField.value.includes('_')) {
+                validarButton.removeAttribute('disabled');
+            } else {
+                validarButton.setAttribute('disabled', 'disabled');
+            }
+      }
+      function formatarCodigo(codigo) {
+            let maskedValue = '';
+    
+            for (let i = 0; i < codigo.length && i < 32; i++) {
+                maskedValue += codigo[i];
+                if (i === 7 || i === 11 || i === 15 || i === 19) {
+                    maskedValue += '-';
+                }
+            }
+    
+            return maskedValue;
+        }
+      </script>
+      
+    <script src="{% static 'vendor.js'%}"></script>
+    
+    <script src="{% static 'app.js'%}"></script>
+
+  <div block-ui-container="" class="block-ui-container ng-scope" bis_skin_checked="1">
+    <div class="block-ui-overlay" bis_skin_checked="1"></div>
+    <div class="block-ui-message-container" aria-live="assertive" aria-atomic="true" bis_skin_checked="1">
+      <div class="block-ui-message ng-binding" ng-class="$_blockUiMessageClass" bis_skin_checked="1">Aguarde...</div>
+    </div>
+  </div>
+</body>
+
+</html>
