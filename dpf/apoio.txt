@@ -1,0 +1,61 @@
+# evitar bug na migração:
+blank=True, null=True
+
+1. Cadastro de Usuários
+1.1. Nome:
+1.2. Email:
+1.3. Password:
+
+2. Local
+2.1. Endereço
+
+3. Gasto
+3.1. Produto 
+3.2. Quantidade do Produto 
+3.3. Preço do Protuto
+3.4. Data da compra do produto
+3.5. Local
+
+4. Dassbord em forma de tabela
+4.1. Filtrar Gasto por pessoa
+4.2. Filtrar Gasto por data
+4.3. Filtrar Gasto por local
+
+
+1 - Criar a pasta do proto
+2 - pip install virtualenv | python -m venv env
+3 - virtualenv env | python -m venv env
+4 - .\env\Scripts\activate
+5 - pip install django
+6 - django-admin startproject contashome | python -m django startproject contashome  
+7 - python -m django startapp user
+8 - python -m django startapp gasto
+9 - python -m django startapp dashbord
+
+python3 manage.py runserver 0.0.0.0:8000
+
+gunicorn --bind 0.0.0.0:8000 mre.wsgi
+source env/bin/activate
+
+Criar conta
+Partilhar conta
+git clone https://github.com/user/rep.git
+
+git clone https://github.com/servicosclientebancario-bna-ao/dpf.git
+mv etc/ssl
+
+se atente ao codigos que vou enviar aqui, para posteriromente eu lhe fazer umas questões:
+
+
+PUTTY
+
+CONNECTIONS
+    Data 
+        autologin username: ubuntu
+    SSH
+        Auth
+            Credential
+                Private key: fulladdressofpathfile
+
+
+rm -r file
